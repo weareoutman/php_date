@@ -116,7 +116,7 @@ var php_date = (function(){
 					a.push(week == 0 ? 7 : week);
 					break;
 				case "S":
-					a.push(DayIndexes[day > 3 ? 3 : day - 1]);
+					a.push(DayIndexes[day % 10 > 3 ? 3 : day % 10 - 1]);
 					break;
 				case "w":
 					a.push(week);
