@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Php date by weareoutman</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Php date</h1>
+        <h2>A javascript equivalent of PHP’s date()</h2>
+        <a href="https://github.com/weareoutman/php_date" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="php_datejs" class="anchor" href="#php_datejs"><span class="octicon octicon-link"></span></a>php_date.js</h1>
+
+<p>php_date.js is a javascript equivalent of PHP’s date().
+See <a href="http://php.net/manual/en/function.date.php">PHP: date - Manual</a>.</p>
+
+<h2>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"php_date.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="c1">//function php_date(format, date){};</span>
+<span class="kd">var</span> <span class="nx">str1</span> <span class="o">=</span> <span class="nx">php_date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">str2</span> <span class="o">=</span> <span class="nx">php_date</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="kd">var</span> <span class="nx">str3</span> <span class="o">=</span> <span class="nx">php_date</span><span class="p">(</span><span class="s2">"r"</span><span class="p">,</span> <span class="s2">"2013/04/17 15:16:00"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">str4</span> <span class="o">=</span> <span class="nx">php_date</span><span class="p">(</span><span class="s2">"U"</span><span class="p">,</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">());</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>That works just like:</p>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nv">$str1</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"Y-m-d H:i:s"</span><span class="p">);</span>
+<span class="nv">$str2</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="nb">time</span><span class="p">());</span>
+<span class="nv">$str3</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"r"</span><span class="p">,</span> <span class="nb">strtotime</span><span class="p">(</span><span class="s2">"2013/04/17 15:16:00"</span><span class="p">));</span>
+<span class="nv">$str4</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">"U"</span><span class="p">,</span> <span class="nb">time</span><span class="p">());</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+
+<h2>
+<a name="supported-format-chars" class="anchor" href="#supported-format-chars"><span class="octicon octicon-link"></span></a>Supported format chars:</h2>
+
+<ul>
+<li> d : Day of the month, 2 digits with leading zeros</li>
+<li> D : A textual representation of a day, three letters</li>
+<li> j : Day of the month without leading zeros</li>
+<li> l : A full textual representation of the day of the week</li>
+<li> N : ISO-8601 numeric representation of the day of the week</li>
+<li> S : English ordinal suffix for the day of the month, 2 characters</li>
+<li> w : Numeric representation of the day of the week </li>
+<li> F : A full textual representation of a month</li>
+<li> m : Numeric representation of a month, with leading zeros</li>
+<li> M : A short textual representation of a month, three letters </li>
+<li> n : Numeric representation of a month, without leading zeros</li>
+<li> Y : A full numeric representation of a year, 4 digits</li>
+<li> y : A two digit representation of a year</li>
+<li> a : Lowercase Ante meridiem and Post meridiem</li>
+<li> A : Uppercase Ante meridiem and Post meridiem</li>
+<li> g : 12-hour format of an hour without leading zeros</li>
+<li> G : 24-hour format of an hour without leading zeros</li>
+<li> h : 12-hour format of an hour with leading zeros </li>
+<li> H : 24-hour format of an hour with leading zeros</li>
+<li> i : Minutes with leading zeros </li>
+<li> s : Seconds, with leading zeros</li>
+<li> O : Difference to Greenwich time (GMT) in hours</li>
+<li> P : Difference to Greenwich time (GMT) with colon between hours and minutes</li>
+<li> Z : Timezone offset in seconds</li>
+</ul><h2>
+<a name="unsupported-format-chars" class="anchor" href="#unsupported-format-chars"><span class="octicon octicon-link"></span></a>Unsupported format chars:</h2>
+
+<ul>
+<li> z : The day of the year (starting from 0)</li>
+<li> W : ISO-8601 week number of year, weeks starting on Monday</li>
+<li> t : Number of days in the given month</li>
+<li> L : Whether it's a leap year</li>
+<li> o : ISO-8601 year number. This has the same value as Y, except that
+        if the ISO week number (W) belongs to the previous or next year, that year is used instead</li>
+<li> B : Swatch Internet time</li>
+<li> u : Microseconds</li>
+<li> e : Timezone identifier</li>
+<li> I : Whether or not the date is in daylight saving time</li>
+<li> T : Timezone abbreviation</li>
+</ul><h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>open <code>test/index.html</code> in your browser, and see the page or the console.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/weareoutman/php_date/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/weareoutman/php_date/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/weareoutman/php_date"></a> is maintained by <a href="https://github.com/weareoutman">weareoutman</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
