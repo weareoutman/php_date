@@ -58,6 +58,7 @@
  */
 
 var php_date = (function(){
+	"use strict";
 	var AbbrWeeks = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
 		Weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
 		Months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -77,7 +78,7 @@ var php_date = (function(){
 			hour = date.getHours(),
 			minute = date.getMinutes(),
 			second = date.getSeconds(),
-			milliseconds = date.getMilliseconds(),
+			// milliseconds = date.getMilliseconds(),
 			offset = -date.getTimezoneOffset(),
 			offsetSign = offset < 0 ? "-" : "+",
 			offsetHour = Math.floor(Math.abs(offset) / 60),
